@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  inventory: 1
+  price: 9.99
+  restocked_at: 2021-11-11 17:07:31
+
+two:
+  name: MyString
+  description: MyText
+  inventory: 1
+  price: 9.99
+  restocked_at: 2021-11-11 17:07:31
