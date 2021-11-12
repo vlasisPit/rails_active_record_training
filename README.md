@@ -41,4 +41,4 @@ To connect to mysql docker running container (on windows)
 - rails db:rollback
 
 ## Create a Join table
-- xvzcz
+- rails g migration CreateJoinTableMailingListUser mailing_list user  # mailing_list column and user column
