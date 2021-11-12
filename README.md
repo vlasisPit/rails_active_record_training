@@ -18,18 +18,24 @@ To connect to mysql docker running container (on windows)
 - rails db:create
 
 ## Migration Shortcuts
-- rails generate model Product # create model and migration Product
-- rails g model Product  # same as above
-- rails g model Product name:string
-- rails g model Product --no-timestamps # without created_at and updated_at 
+- rails generate model Product # create model and migration Product  
+- rails g model Product  # same as above  
+- rails g model Product name:string  
+- rails g model Product --no-timestamps # without created_at and updated_at  
 - rails g model Product name:string description:text inventory:integer 'price:decimal{7,2}' restocked_at:datetime  # price with precision and scale
 - rails g migration AddQtySoldToProducts qty_sold:integer  # add_column integer qty_sold on products table, Add<Something>To<Table>  
 - rails g migration AddRefNumToProducts ref_num:string:index  # add RefNum column on table Products and make it an index
 - rails g migration AddStyleToProducts style:references  # style id column foreign key to products
 
-## Change method  
+## Change method
 - You can use change instead of up and down (old style). By the new style, Rails can understand automatically the down method.
 - You need to provide on change all the necessary information to reverse the change you made. For example, when you use change for deleting a column, you need to provide the type of the column to reverse the action.
 - rails db:rollback # to go back on migrations.Undo the last migration.
 - rails db:migrate:status  # status of the migrations
 - rails db:migrate
+
+## Revert Migration
+- rails g migration RevertAddStyleToProducts
+- rails db:migrate:status  
+- rails db:migrate
+- rails db:rollback
