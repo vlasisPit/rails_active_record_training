@@ -30,4 +30,6 @@ To connect to mysql docker running container (on windows)
 ## Change method  
 - You can use change instead of up and down (old style). By the new style, Rails can understand automatically the down method.
 - You need to provide on change all the necessary information to reverse the change you made. For example, when you use change for deleting a column, you need to provide the type of the column to reverse the action.
- 
+- rails db:rollback # to go back on migrations.Undo the last migration.
+- rails db:migrate:status  # status of the migrations
+- rails db:migrate
