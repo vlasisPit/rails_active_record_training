@@ -1,5 +1,3 @@
-# README
-
 ## Docker database configuration
 Before start using Ruby on Rails, MySQL should run first. Follow the commands below  
 
@@ -12,6 +10,10 @@ Before start using Ruby on Rails, MySQL should run first. Follow the commands be
 - GRANT ALL PRIVILEGES ON rails_active_record_training_development.* TO 'vlasis'@'%';  
 - GRANT ALL PRIVILEGES ON rails_active_record_training_test.* TO 'vlasis'@'%';
 
+To connect to mysql docker running container (on windows)
+- winpty docker exec -it 28c30592b5c6 bash
+- mysql -uroot -p   # password root
+
 ## Create database
 - rails db:create
 
@@ -23,4 +25,9 @@ Before start using Ruby on Rails, MySQL should run first. Follow the commands be
 - rails g model Product name:string description:text inventory:integer 'price:decimal{7,2}' restocked_at:datetime  # price with precision and scale
 - rails g migration AddQtySoldToProducts qty_sold:integer  # add_column integer qty_sold on products table, Add<Something>To<Table>  
 - rails g migration AddRefNumToProducts ref_num:string:index  # add RefNum column on table Products and make it an index
-- rails g migration AddStyleToProducts style:references  # style id column foregin key to products
+- rails g migration AddStyleToProducts style:references  # style id column foreign key to products
+
+## Change method  
+- You can use change instead of up and down (old style). By the new style, Rails can understand automatically the down method.
+- You need to provide on change all the necessary information to reverse the change you made. For example, when you use change for deleting a column, you need to provide the type of the column to reverse the action.
+ 
