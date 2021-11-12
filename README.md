@@ -19,11 +19,11 @@ To connect to mysql docker running container (on windows)
 
 ## Migration Shortcuts
 - rails generate model Product # create model and migration Product  
-- rails g model Product  # same as above  
-- rails g model Product name:string  
-- rails g model Product --no-timestamps # without created_at and updated_at  
+- rails g model Product  # same as above
+- rails g model Product name:string
+- rails g model Product --no-timestamps # without created_at and updated_at
 - rails g model Product name:string description:text inventory:integer 'price:decimal{7,2}' restocked_at:datetime  # price with precision and scale
-- rails g migration AddQtySoldToProducts qty_sold:integer  # add_column integer qty_sold on products table, Add<Something>To<Table>  
+- rails g migration AddQtySoldToProducts qty_sold:integer  # add_column integer qty_sold on products table, Add'Something'To'Table'
 - rails g migration AddRefNumToProducts ref_num:string:index  # add RefNum column on table Products and make it an index
 - rails g migration AddStyleToProducts style:references  # style id column foreign key to products
 
@@ -39,3 +39,6 @@ To connect to mysql docker running container (on windows)
 - rails db:migrate:status  
 - rails db:migrate
 - rails db:rollback
+
+## Create a Join table
+- xvzcz
